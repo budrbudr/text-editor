@@ -1,9 +1,6 @@
 <template>
     <main>
         <h1>Text Editor</h1>
-        <section>
-            <JsonConverter />
-        </section>
         <section class="content-section">
             <EditableButtons/>
             <Editor @input="textEl = $event"/>
@@ -14,11 +11,10 @@
 <script>
     import Editor from "../components/Editor";
     import EditableButtons from "@/components/EditableButtons";
-    import JsonConverter from "../components/JsonConverter";
 
     export default {
         name: "Home",
-        components: {JsonConverter, EditableButtons, Editor},
+        components: {EditableButtons, Editor},
         methods: {},
     }
 </script>
