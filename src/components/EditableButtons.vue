@@ -1,7 +1,7 @@
 <template>
   <section class="bar-section">
     <div class="bar-block">
-      <span>Font size</span>
+      <span>{{inputValues.selectSize.label}}</span>
       <select
           class="select"
           v-model="selectedFontSize"
@@ -15,10 +15,10 @@
       </select>
     </div>
     <div class="bar-block">
-      <span>Color</span>
+      <span>{{inputValues.colorInput.label}}</span>
       <input
           class="input"
-          type="color"
+          :type="inputValues.colorInput.type"
           @change="fontBarChangeMethod('color', selectedColor)"
           v-model="selectedColor"
       />
@@ -31,10 +31,10 @@
 <!--      />-->
     </div>
     <div class="bar-block">
-      <span>Background color</span>
+      <span>{{inputValues.backgroundColor.label}}</span>
       <input
           class="input"
-          type="color"
+          :type="inputValues.backgroundColor.type"
           @change="fontBarChangeMethod('backgroundColor', selectedBackground)"
           v-model="selectedBackground"
       />
@@ -66,6 +66,9 @@ export default {
         backgroundColor: {
           type: 'color',
           label: 'Background color'
+        },
+        selectSize: {
+          label: 'Font size'
         }
       }
     };
